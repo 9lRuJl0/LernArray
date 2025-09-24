@@ -11,7 +11,30 @@ namespace LernArray
         /*Задача: напишите программу на C#, которая вычисляет сумму двух заданных целочисленных значений. 
                   Если два заданных значения равны, то вернуть двойную сумму.*/
 
-        static void Main(string[] args)
+        private string _resault;
+
+        public LaboratoryWork(string resault) 
+        {
+           
+            _resault = resault;
+
+        } 
+
+
+        public string GetResault()
+        {
+            return _resault;
+        }
+        
+        public void LogResault()
+        {
+            Console.WriteLine(_resault);
+        }
+
+
+
+
+       public static void GetAnsver1()
         {
             Console.Write("Введите первое число: ");
 
@@ -29,6 +52,9 @@ namespace LernArray
                 int v = res * 2;
                 Console.WriteLine($"Ответ равен: {v}");
             }
+
+
+
 
             Console.ReadKey();
 
