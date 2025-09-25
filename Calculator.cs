@@ -9,15 +9,20 @@ namespace LernArray
 {
     public class Calculator
     {
-        private readonly decimal koeff;
+        private readonly decimal _koeff;
 
-        private decimal salaryResult;
+        private decimal _salaryResult;
+
+        public Calculator(decimal koeff)
+        {
+            _koeff = koeff;
+        }
 
         public decimal Calculate(decimal salaryGross)
         {
             decimal koeff = floatingCoefficient(salaryGross);
-            salaryResult = salaryGross * (1 - koeff);
-            return salaryResult;
+            _salaryResult = salaryGross * (1 - koeff);
+            return _salaryResult;
         }
 
 
@@ -25,7 +30,7 @@ namespace LernArray
         {
             decimal annualSalaryResult;
 
-            annualSalaryResult = salaryResult * 12;
+            annualSalaryResult = _salaryResult * 12;
 
             return annualSalaryResult;
         }
@@ -49,10 +54,7 @@ namespace LernArray
 
         }
 
-        public Calculator(decimal koeff)
-        {
-            this.koeff = koeff;
-        }
+
 
     }
 }

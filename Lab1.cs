@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LernArray
 {
-    public class LaboratoryWork
+    public class LaboratoryWork 
     {
         /*Задача: напишите программу на C#, которая вычисляет сумму двух заданных целочисленных значений. 
                   Если два заданных значения равны, то вернуть двойную сумму.*/
