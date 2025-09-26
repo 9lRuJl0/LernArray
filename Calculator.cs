@@ -9,44 +9,36 @@ namespace LernArray
 {
     public class Calculator
     {
-        private readonly decimal _koeff;
+     
+        private readonly decimal _salaryGross;
 
-        private decimal _salaryResult;
-
-        public Calculator(decimal koeff)
+        private decimal _totalResult;
+        public Calculator(decimal salaryGross)
         {
-            _koeff = koeff;
+            _salaryGross = salaryGross;
         }
 
-        public decimal Calculate(decimal salaryGross)
+        public decimal Calculate()
         {
-            decimal koeff = floatingCoefficient(salaryGross);
-            _salaryResult = salaryGross * (1 - koeff);
-            return _salaryResult;
+            
+            var koeff = FloatingCoefficient(_totalResult + _salaryGross);
+            _totalResult += _salaryGross * (1 - koeff);
+            return _totalResult;
+
         }
 
-
-        public decimal AnnualСalculation(decimal annualSalaruGross)
+        private decimal FloatingCoefficient(decimal currentSalaryGross)
         {
-            decimal annualSalaryResult;
-
-            annualSalaryResult = _salaryResult * 12;
-
-            return annualSalaryResult;
-        }
-
-        public decimal floatingCoefficient(decimal annualSalaryGross)
-        {
-            if (annualSalaryGross < 2400000m)
+            if (currentSalaryGross < 2400000m)
                 return 0.13m;
 
-            else if (annualSalaryGross >= 2400000m && annualSalaryGross < 5000000m)
+            else if (currentSalaryGross >= 2400000m && currentSalaryGross < 5000000m)
                 return 0.15m;
 
-            else if (annualSalaryGross >= 5000000m && annualSalaryGross < 20000000m)
+            else if (currentSalaryGross >= 5000000m && currentSalaryGross < 20000000m)
                 return 0.18m;
 
-            else if (annualSalaryGross >= 20000000m && annualSalaryGross < 50000000m)
+            else if (currentSalaryGross >= 20000000m && currentSalaryGross < 50000000m)
                 return 0.2m;
 
             else
